@@ -1,0 +1,42 @@
+[  
+   {  
+      "name":"Chris gowl",
+      "phoneNum":23456789,
+      "lat":37.645963,
+      "long":-77.555809,
+      "isAvailable":"y",
+      "personimg":"assets/imgs/driver1.jpg",
+      "rating":4,
+      "wages":"123$"
+   },
+   {  
+      "name":"Robert brown",
+      "phoneNum":8067456789,
+      "lat":37.646401,
+      "long":-77.562661,
+      "isAvailable":"y",
+      "personimg":"assets/imgs/driver2.jpg",
+      "rating":3,
+      "wages":"103$"
+   },
+   {  
+      "name":"Michecle green",
+      "phoneNum":9875456789,
+      "lat":37.506991,
+      "long":-77.610595,
+      "isAvailable":"y",
+      "personimg":"assets/imgs/driver3.jpg",
+      "rating":5,
+      "wages":"190$"
+   },
+   {  
+      "name":"Ross white",
+      "phoneNum":987656789,
+      "lat":37.654154,
+      "long":-77.610708,
+      "isAvailable":"y",
+      "personimg":"assets/imgs/driver1.jpg",
+      "rating":2,
+      "wages":"123$"
+   }
+]
