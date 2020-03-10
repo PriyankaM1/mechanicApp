@@ -1,0 +1,69 @@
+<!--
+  Generated template for the UserDetailPhoneNumberPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title navStyle>MechanicOnGo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+  <ion-row>
+  <ion-col width-100>
+      <ion-item>
+      <ion-select  class="conSel" [(ngModel)]="selectedCountry" (ionChange)='selectCountry()'>
+	 <ion-option data-countryCode="GB" value="44" Selected>UK (+44)</ion-option>
+	<ion-option data-countryCode="US" value="1">USA (+1)</ion-option>
+		<ion-option data-countryCode="DZ" value="213">Algeria (+213)</ion-option>
+		<ion-option data-countryCode="AD" value="376">Andorra (+376)</ion-option>
+		<ion-option data-countryCode="AO" value="244">Angola (+244)</ion-option>
+		<ion-option data-countryCode="AU" value="61">Australia (+61)</ion-option>
+		<ion-option data-countryCode="AT" value="43">Austria (+43)</ion-option>
+		<ion-option data-countryCode="AZ" value="994">Azerbaijan (+994)</ion-option>
+		<ion-option data-countryCode="BS" value="1242">Bahamas (+1242)</ion-option>
+		<ion-option data-countryCode="BH" value="973">Bahrain (+973)</ion-option>
+		<ion-option data-countryCode="CM" value="237">Cameroon (+237)</ion-option>
+		<ion-option data-countryCode="CA" value="1">Canada (+1)</ion-option>
+		<ion-option data-countryCode="DK" value="45">Denmark (+45)</ion-option>
+		<ion-option data-countryCode="FR" value="33">France (+33)</ion-option>
+		<ion-option data-countryCode="GF" value="594">French Guiana (+594)</ion-option>
+		<ion-option data-countryCode="DE" value="49">Germany (+49)</ion-option>
+		<ion-option data-countryCode="GR" value="30">Greece (+30)</ion-option>
+		<ion-option data-countryCode="IN" value="91">India (+91)</ion-option>
+		</ion-select>
+         </ion-item>
+ </ion-col>
+         <!-- <ion-col width-50>
+          <ion-item>
+		<ion-input type="tel"  name="title">ewer</ion-input>
+</ion-item>
+ </ion-col>-->
+  </ion-row>
+  <ion-row>
+  <ion-col col-4>
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="digitNumber"  name="title"></ion-input> 
+</ion-item>
+  </ion-col>
+  <ion-col col-8>
+  <ion-item>
+    <ion-input type="tel" [(ngModel)]="phonenumber" required  name="phone" pattern="[0-9]*"
+   minlength="10"
+   maxlength="10"    #phoneVar="ngModel" ></ion-input>  
+</ion-item>
+                        <div style="color:red" [hidden]="!phoneVar.hasError('minlength')">***Mobile should be 10digit</div>
+      <div style="color:red" [hidden]="!phoneVar.hasError('required')">***Mobile is required</div>
+      <div style="color:red" [hidden]="!phoneVar.hasError('pattern')">***Mobile numberr should be only numbers</div>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+
+      <button ion-button type="submit" block color="secondary" (click)="goToNextPage()" >Next</button>
+</ion-content>

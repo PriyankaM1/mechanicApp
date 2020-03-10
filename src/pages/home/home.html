@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+  	<button ion-button icon-only menuToggle>
+  		<ion-icon name="menu"></ion-icon>
+  	</button>
+  	 <ion-title navStyle>MechanicOnGo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <div #map id="map">
+ </div> 
+ <ion-item  *ngIf="isNewRequest" class="mechChkbox">
+    <ion-label>Need a Mechanic</ion-label>
+    <ion-checkbox (click)="displayVehicleType()" [(ngModel)]="mechanicDemand"></ion-checkbox>
+  </ion-item>
+  <div *ngIf="isDisplayVehicle">{{ isDisplayVehicle}}
+ <button ion-button color="secondary" class="btnType">Select a Type</button> 
+  <ul>
+    <li (click)="addClass(id=1)"> <ion-icon [ngClass]="{'selected': id === 1 }" id="1" name="bicycle"></ion-icon><span>Bike</span></li>
+    <li (click)="addClass(id=2)"><ion-icon [ngClass]="{'selected': id === 2 }" id="2" name="car"></ion-icon><span>Car</span></li>
+    <li></li>
+    <li></li>
+    <li><ion-icon name="truck"></ion-icon><span>Heavy duty</span></li>
+    <li (click)="addClass(id=4)"><ion-icon  [ngClass]="{'selected': id === 4 }" id="4" name="car" name="bus"></ion-icon><span>Truck</span></li>
+    </ul>
+      <button ion-button color="secondary" (click)="GetMechanicsInfo()" class="btnFind">Find</button>
+      </div>
+      <div *ngIf="!isNewRequest">
+          <ion-avatar item-start style="width:150px">
+      <img src = {{ispersonimg}}>
+    </ion-avatar>
+          <p *ngIf="!mechanicAvail" class="selected">Your Mechanic is {{duration}} away </p>
+          <p *ngIf="mechanicAvail" class="selected">Once the Mechanic has reached .Continue with the payment </p>
+         <div *ngIf="mechanicAvail" class="paymentMethod">
+          <button ion-button color="secondary" class="btnType" (click)="makePayment()">Make Payment</button> 
+          <ul>
+          <li (click)="addClass(id=5)"> <ion-icon [ngClass]="{'selected': id === 5 }"  name="cash"></ion-icon><span>Cash</span></li>
+
+    <li (click)="addClass(id=6)"><ion-icon [ngClass]="{'selected': id === 6 }"  name="card"></ion-icon><span>Card</span></li>
+          </ul>
+         </div>
+         <button ion-button color="secondary"  class="btnCancel" (click)="cancelRequest()">Cancel Request</button>
+         <button ion-button color="secondary"  class="btnCall" (click)="callMechanic()">Call</button>
+       
+      </div>
+
+</ion-content>

@@ -1,0 +1,55 @@
+<!--
+  Generated template for the MechanicListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>mechanicList</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="cards-bg social-cards">
+
+<ion-card *ngFor="let item of Mechanics">
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img src={{item.personimg}}>
+    </ion-avatar>
+    <h2>{{item.name}}</h2>
+    <p>{{item.phoneNum}}</p>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button color="secondary"  (click)="connectedToMechanic(item)"  small>
+        Connect
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button color="secondary" clear small >
+        {{item.wages}} per hour
+      </button>
+    </ion-col>
+    <ion-col align-self-center text-center>
+       <ion-icon name="star" class="selected"> </ion-icon>
+       <ion-icon name="star" class="selected"> </ion-icon>
+        <ion-icon name="star" class="selected"> </ion-icon>
+         <ion-icon name="star" class="selected"> </ion-icon>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
+
+</ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>

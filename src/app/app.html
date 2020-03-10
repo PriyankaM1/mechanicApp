@@ -1,0 +1,26 @@
+
+<ion-menu [content]="NAV" persistent=true>
+ <ion-content>
+   <ion-list>
+  <ion-item  menuClose (click)="openPage(homePage)">
+    <ion-icon name="home" item-start></ion-icon>
+      Home
+  </ion-item>
+   <ion-item>
+    <ion-icon name="settings" item-start></ion-icon>
+      Settings
+  </ion-item>
+   <ion-item>
+    <ion-icon name="bicycle" item-start></ion-icon>
+      Service Providers
+  </ion-item>
+   <ion-item menuClose (click)="openPage(landingPage)">
+    <ion-icon  name="log-out" item-start></ion-icon>
+      Log Out
+  </ion-item>
+</ion-list>
+ </ion-content>
+</ion-menu>
+
+
+<ion-nav [root]="rootPage" #NAV></ion-nav>
